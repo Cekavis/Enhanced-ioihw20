@@ -8,10 +8,6 @@
 // @grant GM_addStyle
 // ==/UserScript==
 
-// ==OpenUserJS==
-// @author       Cekavis
-// ==/OpenUserJS==
-
 GM_addStyle (`
     body > div > div.uoj-content > div.table-responsive > table > thead > tr > th:nth-child(1){
         width: 8em !important;
