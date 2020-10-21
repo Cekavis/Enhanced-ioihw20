@@ -1,5 +1,7 @@
 // ==UserScript==
 // @name         Enhanced ioihw20
+// @description  Showing problem owners and real names on ioihw20.duck-ac.cn
+// @license      MIT
 // @version      0.1
 // @author       Cekavis
 // @match        https://ioihw20.duck-ac.cn/*
