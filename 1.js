@@ -2,7 +2,7 @@
 // @name         Enhanced ioihw20
 // @description  Showing problem owners and real names on ioihw20.duck-ac.cn
 // @license      MIT
-// @version      0.2
+// @version      0.2.1
 // @author       Cekavis
 // @match        https://ioihw20.duck-ac.cn/*
 // @grant GM_addStyle
@@ -462,30 +462,6 @@ async function mainRender() {
             $tr.append(`<td>${user.count}</td>`);
             $('.table tbody').append($tr);
         }
-    }
-
-    if (location.pathname == '/problems' || location.pathname.startsWith('/problems/')) {
-        $('.table thead tr th:last-child').css('width', '170px');
-        $('.table thead tr').eq(0).append('<th class="text-center" style="width: 110px;">来源</th>');
-        $('.table tbody tr').each(function(index, element) {
-            let $element = $(element);
-            let problemId = $element.children('td').eq(0).text().slice(1);
-            let { problemType, shortcut, contestId } = getProblemInfo(problemId);
-
-            let extraContent = '';
-            if (problemType == '作业题') {
-                extraContent = `
-                    <a target="_blank" rel="noopener noreferrer" href="${config.url.codeforces}/gym/${contestId}/problem/${shortcut[1]}">
-                        ${shortcut}
-                    </a>
-                    <a target="_blank" rel="noopener noreferrer" href="${config.url.codeforces}/gym/${contestId}">
-                        (${contestId})
-                    </a>
-                `;
-            }
-
-            $element.append('<td>' + extraContent + '</td>');
-        });
     }
 
     if (location.pathname.startsWith('/problem/')) {
